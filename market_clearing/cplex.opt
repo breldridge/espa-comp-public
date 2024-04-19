@@ -1,0 +1,14 @@
+* CPLEX sovler options file
+*advind 1
+*feasoptmode 2
+*memoryemphasis 1
+*mipstart 1
+*predual 1
+bndstrenind 1
+cliques 2
+lazyconstraints 1
+lpmethod 1
+*mipemphasis 3
+*mipdisplay 2
+startalg 2
+subalg 2

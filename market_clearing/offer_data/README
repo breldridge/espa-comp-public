@@ -1,0 +1,43 @@
+Organization of offer directories (subject to change, of course):
+
+offer_dir will hold a file with info on participants and resources.
+Each participantID will be connected to its resource IDs. Each
+resouce in the will have its type (gen, ren, str, dem, vir)
+
+Each participant has their own directory. Name is something like
+participant_[participantID]
+
+Within their directories they have a unique directory for each 
+storage resource in their portfolio, as well as a single virtual
+bid directory (unless multiple virtual bid directories are needed).
+These will each have the (pre-assigned) resource ID. The virtual
+bid directory will be named vir_[participantID].
+
+The resource directories will hold the offer data file (in .json
+format) and the latest status updates from the system (also in
+.json format). These will be the status updates unique to that
+resource (current offers/settlements, state of charge, etc.)
+
+This will look like
+participant_[pID]
+--str_[rID]
+----offer_[rID]
+----status_[rID]
+--vir_[pID]
+----offer_[pID]
+----status_[pID]
+
+Offers from all of the other resources will be pre-determined
+by the contest operators. These are in the directory
+fixed_system_resources. Each resource will have its own directory
+within fixed_system_resources. Note that the offers may not be
+static (renewables can shift MW offer up/down based on forecast,
+thermal may change offer if a unit goes offline, etc.), but
+they cannot be adjusted (or viewed) by participants.
+
+This will look like
+fixed_system_resources
+--gen_[rID]
+----offer_[rID]
+----status_[rID]
+(and so on for every resource) 
